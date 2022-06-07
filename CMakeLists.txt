@@ -19,5 +19,10 @@ set(SFML_LIB ${INSTALL_DIR})
 include_directories(${SFML_LIB}/include)
 link_directories(${SFML_LIB}/lib)
 
-add_executable(FirstApp ./src/main.cpp)
+set(SOURCE
+  ./src/main.cpp
+  ./src/game.cpp
+)
+
+add_executable(FirstApp ${SOURCE})
 target_link_libraries(FirstApp optimized sfml-system optimized sfml-window optimized sfml-graphics debug sfml-system-d debug sfml-window-d debug sfml-graphics-d)
